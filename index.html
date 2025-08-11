@@ -1,0 +1,1436 @@
+<!DOCTYPE html>
+<html lang="tr" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Peyzaj 42 | İstanbul merkezli profesyonel peyzaj tasarım, bahçe inşası, sürdürülebilir dış mekân çözümleri. Ücretsiz danışmanlık." />
+  <meta name="keywords" content="peyzaj tasarım, bahçe inşası, bahçe dekorasyonu, peyzaj mimarı, İstanbul peyzaj, çatı bahçesi, su özellikleri" />
+  <meta name="author" content="Peyzaj 42" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:title" content="Peyzaj 42 | Efsanevi Peyzaj Tasarımı" />
+  <meta property="og:description" content="Doğayla uyumlu, estetik ve sürdürülebilir dış mekân tasarımlarıyla hayallerinizi inşa ediyoruz." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.peyzaj42.com" />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1558904443-7a81e864c93c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" />
+  <meta property="og:site_name" content="Peyzaj 42" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Peyzaj 42 | Efsanevi Peyzaj Tasarımı" />
+  <meta name="twitter:description" content="Sürdürülebilir, estetik ve fonksiyonel bahçe çözümleri." />
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1558904443-7a81e864c93c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" />
+
+  <title>Peyzaj 42 | Efsanevi Peyzaj Tasarımı | İstanbul</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" />
+
+  <!-- AOS Animations -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+  <!-- Lightbox CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Open Sans', sans-serif;
+      color: #333;
+      background: #f8f9fa;
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Playfair Display', serif;
+      color: #2e7d32;
+    }
+
+    /* Header */
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+      padding: 15px 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: 0.4s;
+    }
+
+    .logo {
+      font-size: 26px;
+      font-weight: 700;
+      color: #2e7d32;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 40px;
+    }
+
+    nav a {
+      font-weight: 600;
+      position: relative;
+      transition: 0.3s;
+      color: #333;
+    }
+
+    nav a:after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -5px;
+      left: 0;
+      background-color: #4CAF50;
+      transition: 0.3s;
+    }
+
+    nav a:hover:after {
+      width: 100%;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 24px;
+      cursor: pointer;
+      color: #2e7d32;
+    }
+
+    /* Hero */
+    #home {
+      height: 100vh;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-slider {
+      width: 300%;
+      display: flex;
+      animation: slide 9s infinite;
+    }
+
+    .hero-slide {
+      width: 33.333%;
+      height: 100vh;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.5);
+    }
+
+    .hero-content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      color: white;
+      z-index: 2;
+      width: 80%;
+    }
+
+    .hero h1 {
+      font-size: 4.5rem;
+      margin-bottom: 20px;
+      opacity: 0;
+      animation: fadeInUp 1s ease 0.3s forwards;
+    }
+
+    .hero p {
+      font-size: 1.5rem;
+      max-width: 900px;
+      margin: 0 auto 40px;
+      opacity: 0;
+      animation: fadeInUp 1s ease 0.6s forwards;
+    }
+
+    @keyframes slide {
+      0%, 33.33% { transform: translateX(0); }
+      33.34%, 66.66% { transform: translateX(-33.333%); }
+      66.67%, 100% { transform: translateX(-66.666%); }
+    }
+
+    @keyframes fadeInUp {
+      0% { opacity: 0; transform: translateY(30px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    .btn {
+      padding: 16px 40px;
+      background: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 50px;
+      font-size: 1.2rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.4s;
+      box-shadow: 0 5px 15px rgba(76, 175, 80, 0.3);
+    }
+
+    .btn:hover {
+      background: #388E3C;
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(76, 175, 80, 0.4);
+    }
+
+    /* Bölüm Başlığı */
+    .section-title {
+      text-align: center;
+      font-size: 2.8rem;
+      margin: 80px 0 40px;
+      position: relative;
+    }
+
+    .section-title:after {
+      content: '';
+      display: block;
+      width: 80px;
+      height: 4px;
+      background: #4CAF50;
+      margin: 15px auto 0;
+      border-radius: 2px;
+    }
+
+    /* Hizmetler */
+    #services {
+      padding: 100px 5%;
+      background: white;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 35px;
+      max-width: 1300px;
+      margin: 0 auto;
+    }
+
+    .service-card {
+      background: white;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      transition: 0.5s;
+      text-align: center;
+      padding: 30px;
+    }
+
+    .service-card:hover {
+      transform: translateY(-15px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    }
+
+    .service-card i {
+      font-size: 3.5rem;
+      color: #4CAF50;
+      margin-bottom: 20px;
+    }
+
+    .service-card h3 {
+      font-size: 1.4rem;
+      margin-bottom: 12px;
+    }
+
+    /* Ana Sayfa Galeri */
+    #home-gallery {
+      padding: 100px 5%;
+      background: linear-gradient(135deg, #f1f8e9 0%, #e8f5e8 100%);
+      position: relative;
+    }
+
+    #home-gallery::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="%23ffffff" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+      opacity: 0.3;
+    }
+
+    #home-gallery > * {
+      position: relative;
+      z-index: 2;
+    }
+
+    .home-gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .home-gallery-item {
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+      transition: all 0.4s;
+      position: relative;
+      background: white;
+    }
+
+    .home-gallery-item:hover {
+      transform: translateY(-15px) scale(1.02);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+    }
+
+    .home-gallery-item::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(45deg, rgba(76, 175, 80, 0.1), rgba(46, 125, 50, 0.1));
+      opacity: 0;
+      transition: 0.3s;
+      z-index: 1;
+    }
+
+    .home-gallery-item:hover::before {
+      opacity: 1;
+    }
+
+    .home-gallery-item img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+      transition: 0.5s;
+    }
+
+    .home-gallery-item:hover img {
+      transform: scale(1.1);
+    }
+
+    .home-gallery-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(transparent, rgba(0,0,0,0.8));
+      color: white;
+      padding: 30px 20px 20px;
+      transform: translateY(100%);
+      transition: 0.4s;
+      z-index: 2;
+      text-align: center;
+    }
+
+    .home-gallery-item:hover .home-gallery-overlay {
+      transform: translateY(0);
+    }
+
+    .home-gallery-overlay h3 {
+      font-size: 1.3rem;
+      margin-bottom: 8px;
+      color: white;
+    }
+
+    .home-gallery-overlay p {
+      font-size: 0.9rem;
+      opacity: 0.9;
+      margin: 0;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      font-size: 1.2rem;
+      color: #666;
+      margin-bottom: 50px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .home-gallery-cta {
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 2px solid #4CAF50;
+      color: #4CAF50;
+    }
+
+    .btn-outline:hover {
+      background: #4CAF50;
+      color: white;
+    }
+
+    /* Galeri - Tüm Fotoğraflar */
+    #gallery {
+      padding: 100px 5%;
+      background: #f9f9f9;
+    }
+
+    .gallery-categories {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .category-btn {
+      background: white;
+      border: 2px solid #4CAF50;
+      color: #4CAF50;
+      padding: 12px 24px;
+      margin: 0 8px 15px;
+      border-radius: 25px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: all 0.3s;
+      font-size: 0.95rem;
+    }
+
+    .category-btn:hover,
+    .category-btn.active {
+      background: #4CAF50;
+      color: white;
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(76, 175, 80, 0.3);
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .gallery-item {
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+      position: relative;
+      transition: all 0.4s;
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .gallery-item.hidden {
+      opacity: 0;
+      transform: scale(0.8);
+      pointer-events: none;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      transition: 0.5s;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.1);
+    }
+
+    .gallery-item:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+    }
+
+    .gallery-item .caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(transparent, rgba(0,0,0,0.8));
+      color: white;
+      padding: 20px 15px 15px;
+      transform: translateY(100%);
+      transition: 0.3s;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    .gallery-item:hover .caption {
+      transform: translateY(0);
+    }
+
+    /* Projeler */
+    #projects {
+      padding: 100px 5%;
+      background: white;
+    }
+
+    .project {
+      max-width: 1000px;
+      margin: 50px auto;
+      background: #f9f9f9;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .project img {
+      width: 100%;
+      height: 350px;
+      object-fit: cover;
+    }
+
+    .project-content {
+      padding: 30px;
+    }
+
+    .project-content h3 {
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+    }
+
+    /* Yorumlar */
+    #testimonials {
+      padding: 100px 5%;
+      background: #2e7d32;
+      color: white;
+      text-align: center;
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      max-width: 1200px;
+      margin: 50px auto;
+    }
+
+    .testimonial {
+      background: rgba(255,255,255,0.1);
+      padding: 30px;
+      border-radius: 15px;
+      backdrop-filter: blur(10px);
+    }
+
+    .testimonial p {
+      font-style: italic;
+      margin-bottom: 20px;
+    }
+
+    .client {
+      font-weight: 600;
+    }
+
+    /* Hakkımızda */
+    #about {
+      padding: 100px 5%;
+      background: white;
+    }
+
+    .about-flex {
+      display: flex;
+      align-items: center;
+      gap: 50px;
+      max-width: 1300px;
+      margin: 0 auto;
+    }
+
+    .about-img {
+      flex: 1;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    }
+
+    .about-img img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .about-text {
+      flex: 1;
+    }
+
+    .about-text h3 {
+      font-size: 1.6rem;
+      color: #2e7d32;
+      margin-bottom: 15px;
+    }
+
+    .about-text p {
+      margin-bottom: 15px;
+      line-height: 1.8;
+      font-size: 1.1rem;
+    }
+
+    /* İletişim */
+    #contact {
+      padding: 100px 5%;
+      background: url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+      position: relative;
+    }
+
+    #contact::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(46, 125, 50, 0.9);
+    }
+
+    #contact > * {
+      position: relative;
+      z-index: 2;
+    }
+
+    .contact-container {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+    }
+
+    .contact-info h3 {
+      color: white;
+      margin-bottom: 20px;
+    }
+
+    .contact-info p {
+      color: #e8f5e9;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    #contact-form input, #contact-form textarea {
+      background: rgba(255,255,255,0.15);
+      border: none;
+      padding: 14px;
+      border-radius: 8px;
+      color: white;
+      font-size: 1rem;
+      width: 100%;
+    }
+
+    #contact-form input::placeholder, #contact-form textarea::placeholder {
+      color: rgba(255,255,255,0.7);
+    }
+
+    #contact-form button {
+      margin-top: 15px;
+    }
+
+    /* Google Maps */
+    .map-responsive {
+      overflow: hidden;
+      padding-bottom: 56.25%;
+      position: relative;
+      height: 0;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    }
+
+    .map-responsive iframe {
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 100%;
+      position: absolute;
+    }
+
+    /* Footer */
+    footer {
+      background: #1b5e20;
+      color: #a5d6a7;
+      text-align: center;
+      padding: 50px 5% 30px;
+    }
+
+    .footer-content {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 30px;
+      text-align: left;
+      margin-bottom: 40px;
+    }
+
+    .footer-column h4 {
+      color: white;
+      margin-bottom: 20px;
+      font-size: 1.2rem;
+    }
+
+    .footer-column p, .footer-column a {
+      color: #a5d6a7;
+      margin-bottom: 10px;
+      display: block;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .footer-column a:hover {
+      color: white;
+    }
+
+    .social-links a {
+      color: #a5d6a7;
+      font-size: 1.5rem;
+      margin: 0 10px;
+      transition: 0.3s;
+    }
+
+    .social-links a:hover {
+      color: white;
+      transform: scale(1.2);
+    }
+
+    /* WhatsApp Butonu */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: #25D366;
+      color: white;
+      border-radius: 50px;
+      padding: 15px 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      z-index: 1000;
+      animation: pulse 1.5s infinite;
+      transition: 0.3s;
+    }
+
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+    }
+
+    @keyframes pulse {
+      0% { opacity: 1; }
+      50% { opacity: 0.8; }
+      100% { opacity: 1; }
+    }
+
+    /* Top Button */
+    #topBtn {
+      position: fixed;
+      bottom: 90px;
+      right: 30px;
+      width: 50px;
+      height: 50px;
+      background: #4CAF50;
+      color: white;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 50px;
+      cursor: pointer;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      opacity: 0;
+      transition: 0.4s;
+      z-index: 999;
+    }
+
+    #topBtn.show {
+      opacity: 1;
+    }
+
+    /* Mobil Uyum */
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+
+      nav {
+        position: fixed;
+        top: 70px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 70px);
+        background: white;
+        flex-direction: column;
+        transition: 0.5s;
+        padding: 40px;
+      }
+
+      nav.active {
+        left: 0;
+      }
+
+      nav ul {
+        flex-direction: column;
+        gap: 25px;
+      }
+
+      .hero h1 {
+        font-size: 2.8rem;
+      }
+
+      .hero p {
+        font-size: 1.2rem;
+      }
+
+      .contact-container, .about-flex {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-content {
+        grid-template-columns: 1fr;
+      }
+
+      .whatsapp-float {
+        right: 15px;
+        bottom: 15px;
+        padding: 12px 16px;
+        font-size: 0.9rem;
+      }
+
+      #topBtn {
+        bottom: 80px;
+        right: 15px;
+      }
+
+      .map-responsive {
+        padding-bottom: 75%;
+      }
+
+      .home-gallery-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 15px;
+      }
+
+      .gallery-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 15px;
+      }
+
+      .category-btn {
+        padding: 10px 20px;
+        margin: 0 5px 10px;
+        font-size: 0.9rem;
+      }
+
+      .section-subtitle {
+        font-size: 1.1rem;
+        margin-bottom: 40px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header id="header">
+    <div class="logo">Peyzaj 42</div>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <nav id="nav">
+      <ul>
+        <li><a href="#home">Anasayfa</a></li>
+        <li><a href="#services">Hizmetler</a></li>
+        <li><a href="#gallery">Galeri</a></li>
+        <li><a href="#projects">Projeler</a></li>
+        <li><a href="#testimonials">Yorumlar</a></li>
+        <li><a href="#about">Hakkımızda</a></li>
+        <li><a href="#contact">İletişim</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Ana Sayfa Slayt -->
+  <section id="home">
+    <div class="hero-slider">
+      <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1558904443-7a81e864c93c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');">
+        <div class="overlay"></div>
+      </div>
+      <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1565538810643-b5bdb714032a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');">
+        <div class="overlay"></div>
+      </div>
+      <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1531008235293-14921326539e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');">
+        <div class="overlay"></div>
+      </div>
+    </div>
+    <div class="hero-content">
+      <h1>Efsanevi Bahçeler, Gerçekleşiyor</h1>
+      <p>Doğayla uyumlu, sürdürülebilir ve estetik dış mekân tasarımlarıyla hayallerinizi inşa ediyoruz.</p>
+      <a href="#contact" class="btn">Ücretsiz Danışmanlık Al</a>
+    </div>
+  </section>
+
+  <!-- Ana Sayfa Galeri (Örnekler) -->
+  <section id="home-gallery">
+    <h2 class="section-title" data-aos="fade-up">Son Projelerimiz</h2>
+    <p class="section-subtitle" data-aos="fade-up" data-aos-delay="200">En yeni ve etkileyici peyzaj tasarımlarımızdan örnekler</p>
+    
+    <div class="home-gallery-grid">
+      <a href="0011bbe9-9576-48ec-b595-6d765ff3ab99.JPG" data-lightbox="home-gallery" data-title="Modern Peyzaj Tasarımı">
+        <div class="home-gallery-item">
+          <img src="0011bbe9-9576-48ec-b595-6d765ff3ab99.JPG" alt="Modern Peyzaj Tasarımı">
+          <div class="home-gallery-overlay">
+            <h3>Modern Peyzaj</h3>
+            <p>Çağdaş tasarım anlayışı</p>
+          </div>
+        </div>
+      </a>
+      
+      <a href="1fd2eec4-4b2f-46f5-824a-d2c78dcfd737.JPG" data-lightbox="home-gallery" data-title="Bahçe Dekorasyonu">
+        <div class="home-gallery-item">
+          <img src="1fd2eec4-4b2f-46f5-824a-d2c78dcfd737.JPG" alt="Bahçe Dekorasyonu">
+          <div class="home-gallery-overlay">
+            <h3>Bahçe Dekorasyonu</h3>
+            <p>Estetik detaylar</p>
+          </div>
+        </div>
+      </a>
+      
+      <a href="261bf905-396d-4cc3-9a52-92f49736e1e8.JPG" data-lightbox="home-gallery" data-title="Su Özellikleri">
+        <div class="home-gallery-item">
+          <img src="261bf905-396d-4cc3-9a52-92f49736e1e8.JPG" alt="Su Özellikleri">
+          <div class="home-gallery-overlay">
+            <h3>Su Özellikleri</h3>
+            <p>Huzur veren su sesleri</p>
+          </div>
+        </div>
+      </a>
+      
+      <a href="4f421386-1805-4f8f-8b08-4e493c0e4666.JPG" data-lightbox="home-gallery" data-title="Teras Bahçesi">
+        <div class="home-gallery-item">
+          <img src="4f421386-1805-4f8f-8b08-4e493c0e4666.JPG" alt="Teras Bahçesi">
+          <div class="home-gallery-overlay">
+            <h3>Teras Bahçesi</h3>
+            <p>Şehirde doğa</p>
+          </div>
+        </div>
+      </a>
+      
+      <a href="86ffc81f-636f-4d77-a3ee-be9bdecd8ce9.JPG" data-lightbox="home-gallery" data-title="Çatı Bahçesi">
+        <div class="home-gallery-item">
+          <img src="86ffc81f-636f-4d77-a3ee-be9bdecd8ce9.JPG" alt="Çatı Bahçesi">
+          <div class="home-gallery-overlay">
+            <h3>Çatı Bahçesi</h3>
+            <p>Yükseklerde yeşil</p>
+          </div>
+        </div>
+      </a>
+      
+      <a href="9284fac1-84f1-4896-a4d5-38aa16d08175.JPG" data-lightbox="home-gallery" data-title="Sürdürülebilir Bahçe">
+        <div class="home-gallery-item">
+          <img src="9284fac1-84f1-4896-a4d5-38aa16d08175.JPG" alt="Sürdürülebilir Bahçe">
+          <div class="home-gallery-overlay">
+            <h3>Sürdürülebilir</h3>
+            <p>Çevre dostu tasarım</p>
+          </div>
+        </div>
+      </a>
+      
+      <a href="9b00b3ff-1218-4012-8ab7-8411c058a5d1.JPG" data-lightbox="home-gallery" data-title="Modern Bahçe Tasarımı">
+        <div class="home-gallery-item">
+          <img src="9b00b3ff-1218-4012-8ab7-8411c058a5d1.JPG" alt="Modern Bahçe Tasarımı">
+          <div class="home-gallery-overlay">
+            <h3>Modern Bahçe</h3>
+            <p>Minimalist yaklaşım</p>
+          </div>
+        </div>
+      </a>
+      
+      <a href="9d04504c-ee0c-485f-bcfa-24edf5304bc5.JPG" data-lightbox="home-gallery" data-title="Doğal Peyzaj">
+        <div class="home-gallery-item">
+          <img src="9d04504c-ee0c-485f-bcfa-24edf5304bc5.JPG" alt="Doğal Peyzaj">
+          <div class="home-gallery-overlay">
+            <h3>Doğal Peyzaj</h3>
+            <p>Vahşi doğa</p>
+          </div>
+        </div>
+      </a>
+    </div>
+    
+    <div class="home-gallery-cta" data-aos="fade-up" data-aos-delay="400">
+      <a href="#gallery" class="btn btn-outline">Tüm Galeriyi Gör</a>
+    </div>
+  </section>
+
+  <!-- Hizmetler -->
+  <section id="services">
+    <h2 class="section-title" data-aos="fade-up">Hizmetlerimiz</h2>
+    <div class="services-grid">
+      <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+        <i class="fas fa-paint-brush"></i>
+        <h3>Peyzaj Tasarımı</h3>
+        <p>3D ve 2D projelerle hayal ettiğiniz bahçeyi önce görüp sonra inşa edin.</p>
+      </div>
+      <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+        <i class="fas fa-tree"></i>
+        <h3>Bahçe İnşası</h3>
+        <p>Yol, teras, oturma alanı ve drenaj sistemleriyle profesyonel uygulama.</p>
+      </div>
+      <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+        <i class="fas fa-water"></i>
+        <h3>Su Özellikleri</h3>
+        <p>Yapay gölet, çeşme, şelale ve havuz çevre düzenlemesi.</p>
+      </div>
+      <div class="service-card" data-aos="fade-up" data-aos-delay="400">
+        <i class="fas fa-leaf"></i>
+        <h3>Bitki Bakımı</h3>
+        <p>Mevsimlik bakım, budama, gübreleme ve organik çözümler.</p>
+      </div>
+      <div class="service-card" data-aos="fade-up" data-aos-delay="500">
+        <i class="fas fa-sun"></i>
+        <h3>Dış Mekân Aydınlatma</h3>
+        <p>Estetik ve fonksiyonel LED aydınlatma sistemleri.</p>
+      </div>
+      <div class="service-card" data-aos="fade-up" data-aos-delay="600">
+        <i class="fas fa-recycle"></i>
+        <h3>Sürdürülebilir Bahçeler</h3>
+        <p>Kuraklık dirençli bitkiler, yağmur suyu toplama, çatı bahçeler.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Galeri (Tümü) -->
+  <section id="gallery">
+    <h2 class="section-title" data-aos="fade-up">Galeri</h2>
+    
+    <!-- Galeri Kategorileri -->
+    <div class="gallery-categories" data-aos="fade-up">
+      <button class="category-btn active" onclick="filterGallery('all')">Tümü</button>
+      <button class="category-btn" onclick="filterGallery('modern')">Modern Tasarımlar</button>
+      <button class="category-btn" onclick="filterGallery('natural')">Doğal Peyzaj</button>
+      <button class="category-btn" onclick="filterGallery('water')">Su Özellikleri</button>
+      <button class="category-btn" onclick="filterGallery('terrace')">Teras Bahçeleri</button>
+    </div>
+    
+    <div class="gallery-grid">
+      <!-- Modern Tasarımlar -->
+      <a href="0011bbe9-9576-48ec-b595-6d765ff3ab99.JPG" data-lightbox="gallery" data-title="Modern Peyzaj Tasarımı" class="gallery-item modern" data-category="modern">
+        <div class="gallery-item">
+          <img src="0011bbe9-9576-48ec-b595-6d765ff3ab99.JPG" alt="Modern Peyzaj Tasarımı">
+          <div class="caption">Modern Peyzaj</div>
+        </div>
+      </a>
+      
+      <a href="1fd2eec4-4b2f-46f5-824a-d2c78dcfd737.JPG" data-lightbox="gallery" data-title="Bahçe Dekorasyonu" class="gallery-item modern" data-category="modern">
+        <div class="gallery-item">
+          <img src="1fd2eec4-4b2f-46f5-824a-d2c78dcfd737.JPG" alt="Bahçe Dekorasyonu">
+          <div class="caption">Bahçe Dekorasyonu</div>
+        </div>
+      </a>
+      
+      <a href="4f421386-1805-4f8f-8b08-4e493c0e4666.JPG" data-lightbox="gallery" data-title="Teras Bahçesi" class="gallery-item terrace" data-category="terrace">
+        <div class="gallery-item">
+          <img src="4f421386-1805-4f8f-8b08-4e493c0e4666.JPG" alt="Teras Bahçesi">
+          <div class="caption">Teras Bahçesi</div>
+        </div>
+      </a>
+      
+      <a href="86ffc81f-636f-4d77-a3ee-be9bdecd8ce9.JPG" data-lightbox="gallery" data-title="Çatı Bahçesi" class="gallery-item terrace" data-category="terrace">
+        <div class="gallery-item">
+          <img src="86ffc81f-636f-4d77-a3ee-be9bdecd8ce9.JPG" alt="Çatı Bahçesi">
+          <div class="caption">Çatı Bahçesi</div>
+        </div>
+      </a>
+      
+      <a href="9b00b3ff-1218-4012-8ab7-8411c058a5d1.JPG" data-lightbox="gallery" data-title="Modern Bahçe Tasarımı" class="gallery-item modern" data-category="modern">
+        <div class="gallery-item">
+          <img src="9b00b3ff-1218-4012-8ab7-8411c058a5d1.JPG" alt="Modern Bahçe Tasarımı">
+          <div class="caption">Modern Bahçe</div>
+        </div>
+      </a>
+      
+      <!-- Doğal Peyzaj -->
+      <a href="9d04504c-ee0c-485f-bcfa-24edf5304bc5.JPG" data-lightbox="gallery" data-title="Doğal Peyzaj" class="gallery-item natural" data-category="natural">
+        <div class="gallery-item">
+          <img src="9d04504c-ee0c-485f-bcfa-24edf5304bc5.JPG" alt="Doğal Peyzaj">
+          <div class="caption">Doğal Peyzaj</div>
+        </div>
+      </a>
+      
+      <a href="01bf89fa-3ecc-44e9-8336-6a138153e005.JPG" data-lightbox="gallery" data-title="Doğal Bahçe" class="gallery-item natural" data-category="natural">
+        <div class="gallery-item">
+          <img src="01bf89fa-3ecc-44e9-8336-6a138153e005.JPG" alt="Doğal Bahçe">
+          <div class="caption">Doğal Bahçe</div>
+        </div>
+      </a>
+      
+      <a href="19f7f7df-b4e5-461c-a862-f18a10200a32.JPG" data-lightbox="gallery" data-title="Organik Peyzaj" class="gallery-item natural" data-category="natural">
+        <div class="gallery-item">
+          <img src="19f7f7df-b4e5-461c-a862-f18a10200a32.JPG" alt="Organik Peyzaj">
+          <div class="caption">Organik Peyzaj</div>
+        </div>
+      </a>
+      
+      <a href="1bcbb1e0-b6ef-44d9-98e9-ebbe3578c696.JPG" data-lightbox="gallery" data-title="Sürdürülebilir Bahçe" class="gallery-item natural" data-category="natural">
+        <div class="gallery-item">
+          <img src="1bcbb1e0-b6ef-44d9-98e9-ebbe3578c696.JPG" alt="Sürdürülebilir Bahçe">
+          <div class="caption">Sürdürülebilir</div>
+        </div>
+      </a>
+      
+      <a href="1df3e95f-30e0-4382-9f7e-24fb920f2bc2.JPG" data-lightbox="gallery" data-title="Doğal Doku" class="gallery-item natural" data-category="natural">
+        <div class="gallery-item">
+          <img src="1df3e95f-30e0-4382-9f7e-24fb920f2bc2.JPG" alt="Doğal Doku">
+          <div class="caption">Doğal Doku</div>
+        </div>
+      </a>
+      
+      <a href="2777df2c-4116-4229-bee2-26d41bac9365.JPG" data-lightbox="gallery" data-title="Vahşi Bahçe" class="gallery-item natural" data-category="natural">
+        <div class="gallery-item">
+          <img src="2777df2c-4116-4229-bee2-26d41bac9365.JPG" alt="Vahşi Bahçe">
+          <div class="caption">Vahşi Bahçe</div>
+        </div>
+      </a>
+      
+      <!-- Su Özellikleri -->
+      <a href="261bf905-396d-4cc3-9a52-92f49736e1e8.JPG" data-lightbox="gallery" data-title="Su Özellikleri" class="gallery-item water" data-category="water">
+        <div class="gallery-item">
+          <img src="261bf905-396d-4cc3-9a52-92f49736e1e8.JPG" alt="Su Özellikleri">
+          <div class="caption">Su Özellikleri</div>
+        </div>
+      </a>
+      
+      <a href="39a0d924-d5f9-46ef-b534-ac4af4076cc9.JPG" data-lightbox="gallery" data-title="Havuz Çevresi" class="gallery-item water" data-category="water">
+        <div class="gallery-item">
+          <img src="39a0d924-d5f9-46ef-b534-ac4af4076cc9.JPG" alt="Havuz Çevresi">
+          <div class="caption">Havuz Çevresi</div>
+        </div>
+      </a>
+      
+      <a href="4447690e-f344-4bcd-8dfe-0dc5d2cbe4f7.JPG" data-lightbox="gallery" data-title="Su Bahçesi" class="gallery-item water" data-category="water">
+        <div class="gallery-item">
+          <img src="4447690e-f344-4bcd-8dfe-0dc5d2cbe4f7.JPG" alt="Su Bahçesi">
+          <div class="caption">Su Bahçesi</div>
+        </div>
+      </a>
+      
+      <a href="6bbb5b59-24a5-4a63-9e5a-9223d6375e23.JPG" data-lightbox="gallery" data-title="Çeşme Tasarımı" class="gallery-item water" data-category="water">
+        <div class="gallery-item">
+          <img src="6bbb5b59-24a5-4a63-9e5a-9223d6375e23.JPG" alt="Çeşme Tasarımı">
+          <div class="caption">Çeşme Tasarımı</div>
+        </div>
+      </a>
+      
+      <!-- Teras ve Çatı Bahçeleri -->
+      <a href="6cfee54d-e864-43bc-a531-d7d859e5d65c.JPG" data-lightbox="gallery" data-title="Teras Peyzajı" class="gallery-item terrace" data-category="terrace">
+        <div class="gallery-item">
+          <img src="6cfee54d-e864-43bc-a531-d7d859e5d65c.JPG" alt="Teras Peyzajı">
+          <div class="caption">Teras Peyzajı</div>
+        </div>
+      </a>
+      
+      <a href="75380728-beac-4878-9c84-04f03252c11c.JPG" data-lightbox="gallery" data-title="Balkon Bahçesi" class="gallery-item terrace" data-category="terrace">
+        <div class="gallery-item">
+          <img src="75380728-beac-4878-9c84-04f03252c11c.JPG" alt="Balkon Bahçesi">
+          <div class="caption">Balkon Bahçesi</div>
+        </div>
+      </a>
+      
+      <a href="79fc1980-dcf7-4bc5-b581-d684d7b5e541.JPG" data-lightbox="gallery" data-title="Çatı Peyzajı" class="gallery-item terrace" data-category="terrace">
+        <div class="gallery-item">
+          <img src="79fc1980-dcf7-4bc5-b581-d684d7b5e541.JPG" alt="Çatı Peyzajı">
+          <div class="caption">Çatı Peyzajı</div>
+        </div>
+      </a>
+      
+      <a href="809c151f-bea8-493d-9394-df6c152210ca.JPG" data-lightbox="gallery" data-title="Teras Düzenlemesi" class="gallery-item terrace" data-category="terrace">
+        <div class="gallery-item">
+          <img src="809c151f-bea8-493d-9394-df6c152210ca.JPG" alt="Teras Düzenlemesi">
+          <div class="caption">Teras Düzenlemesi</div>
+        </div>
+      </a>
+      
+      <a href="823965fa-dd64-4075-a0a4-5728c56f8f80.JPG" data-lightbox="gallery" data-title="Çatı Bahçe" class="gallery-item terrace" data-category="terrace">
+        <div class="gallery-item">
+          <img src="823965fa-dd64-4075-a0a4-5728c56f8f80.JPG" alt="Çatı Bahçe">
+          <div class="caption">Çatı Bahçe</div>
+        </div>
+      </a>
+      
+      <a href="83328a44-3807-4767-8c1c-0dd71358ade8.JPG" data-lightbox="gallery" data-title="Modern Teras" class="gallery-item terrace" data-category="terrace">
+        <div class="gallery-item">
+          <img src="83328a44-3807-4767-8c1c-0dd71358ade8.JPG" alt="Modern Teras">
+          <div class="caption">Modern Teras</div>
+        </div>
+      </a>
+      
+      <a href="89421e8b-735b-44e2-8601-43a77d9e8f60.JPG" data-lightbox="gallery" data-title="Teras Tasarımı" class="gallery-item terrace" data-category="terrace">
+        <div class="gallery-item">
+          <img src="89421e8b-735b-44e2-8601-43a77d9e8f60.JPG" alt="Teras Tasarımı">
+          <div class="caption">Teras Tasarımı</div>
+        </div>
+      </a>
+      
+      <!-- Diğer Tasarımlar -->
+      <a href="bea4fbb1-a474-402d-a42e-7d7220603e43.JPG" data-lightbox="gallery" data-title="Bahçe Yolu" class="gallery-item modern" data-category="modern">
+        <div class="gallery-item">
+          <img src="bea4fbb1-a474-402d-a42e-7d7220603e43.JPG" alt="Bahçe Yolu">
+          <div class="caption">Bahçe Yolu</div>
+        </div>
+      </a>
+      
+      <a href="ca9a2e41-1de4-4a16-bbe2-518c947232df.JPG" data-lightbox="gallery" data-title="Peyzaj Detayı" class="gallery-item modern" data-category="modern">
+        <div class="gallery-item">
+          <img src="ca9a2e41-1de4-4a16-bbe2-518c947232df.JPG" alt="Peyzaj Detayı">
+          <div class="caption">Peyzaj Detayı</div>
+        </div>
+      </a>
+      
+      <a href="c0fe2208-8b00-4700-adf1-89023858ef93.JPG" data-lightbox="gallery" data-title="Bahçe Köşesi" class="gallery-item modern" data-category="modern">
+        <div class="gallery-item">
+          <img src="c0fe2208-8b00-4700-adf1-89023858ef93.JPG" alt="Bahçe Köşesi">
+          <div class="caption">Bahçe Köşesi</div>
+        </div>
+      </a>
+      
+      <a href="d26488c2-2a77-40b3-9655-8819053d1290.JPG" data-lightbox="gallery" data-title="Peyzaj Uygulaması" class="gallery-item modern" data-category="modern">
+        <div class="gallery-item">
+          <img src="d26488c2-2a77-40b3-9655-8819053d1290.JPG" alt="Peyzaj Uygulaması">
+          <div class="caption">Peyzaj Uygulaması</div>
+        </div>
+      </a>
+      
+      <a href="dda31f67-8b8f-495a-b989-747d7ccd6c48.JPG" data-lightbox="gallery" data-title="Bahçe Düzenlemesi" class="gallery-item modern" data-category="modern">
+        <div class="gallery-item">
+          <img src="dda31f67-8b8f-495a-b989-747d7ccd6c48.JPG" alt="Bahçe Düzenlemesi">
+          <div class="caption">Bahçe Düzenlemesi</div>
+        </div>
+      </a>
+      
+      <a href="d0816827-cc39-4c86-a310-848b11940b46.JPG" data-lightbox="gallery" data-title="Peyzaj Projesi" class="gallery-item modern" data-category="modern">
+        <div class="gallery-item">
+          <img src="d0816827-cc39-4c86-a310-848b11940b46.JPG" alt="Peyzaj Projesi">
+          <div class="caption">Peyzaj Projesi</div>
+        </div>
+      </a>
+      
+      <a href="f0f4dde3-dc5f-4d77-8981-a9ce6653b107.JPG" data-lightbox="gallery" data-title="Bahçe Tasarımı" class="gallery-item modern" data-category="modern">
+        <div class="gallery-item">
+          <img src="f0f4dde3-dc5f-4d77-8981-a9ce6653b107.JPG" alt="Bahçe Tasarımı">
+          <div class="caption">Bahçe Tasarımı</div>
+        </div>
+      </a>
+      
+      <a href="f240635c-fcad-486e-bd85-383cbda3e102.JPG" data-lightbox="gallery" data-title="Peyzaj Uygulaması" class="gallery-item modern" data-category="modern">
+        <div class="gallery-item">
+          <img src="f240635c-fcad-486e-bd85-383cbda3e102.JPG" alt="Peyzaj Uygulaması">
+          <div class="caption">Peyzaj Uygulaması</div>
+        </div>
+      </a>
+      
+      <a href="302f933a-ff90-45ff-915e-13b8a136ce19.JPG" data-lightbox="gallery" data-title="Bahçe Detayı" class="gallery-item modern" data-category="modern">
+        <div class="gallery-item">
+          <img src="302f933a-ff90-45ff-915e-13b8a136ce19.JPG" alt="Bahçe Detayı">
+          <div class="caption">Bahçe Detayı</div>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- Hakkımızda -->
+  <section id="about">
+    <h2 class="section-title" data-aos="fade-up">Hakkımızda</h2>
+    <div class="about-flex">
+      <div class="about-img" data-aos="fade-right">
+        <img src="https://images.unsplash.com/photo-1581090763658-959e542b608d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Peyzaj 42 Ekibi">
+      </div>
+      <div class="about-text" data-aos="fade-left">
+        <h3>Peyzaj 42 Kimdir?</h3>
+        <p><strong>2015'ten beri</strong> İstanbul'da hizmet veren <strong>Peyzaj 42</strong>, doğaya saygılı, estetik ve sürdürülebilir dış mekân tasarımlarıyla fark yaratıyor.</p>
+        <p>Ekibimizde peyzaj mimarları, bahçe tasarımcıları ve inşaat mühendisleri yer alır. Her projeyi bir <strong>sanat eseri</strong> gibi ele alır, detaylara önem veririz.</p>
+        <p><strong>Çalışma Saatlerimiz:</strong> Pazartesi - Cuma, 08:00 - 19:00</p>
+        <p>Sürdürülebilirlik, doğallık ve müşteri memnuniyeti bizim için her şeyden önce gelir.</p>
+        <a href="#contact" class="btn">Bize Katılın</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projeler -->
+  <section id="projects">
+    <h2 class="section-title" data-aos="fade-up">Öne Çıkan Projeler</h2>
+    <div class="project" data-aos="fade-right">
+      <img src="https://images.unsplash.com/photo-1565538810643-b5bdb714032a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Doğal Aile Bahçesi">
+      <div class="project-content">
+        <h3>Doğal Aile Bahçesi</h3>
+        <p>İstanbul’da bir aile evi için tasarlanan, çocuklara uygun, doğal malzemelerle inşa edilmiş bahçe. Oyun alanı, dinlenme köşesi ve organik bahçe içeriyor.</p>
+      </div>
+    </div>
+    <div class="project" data-aos="fade-left">
+      <img src="https://images.unsplash.com/photo-1531008235293-14921326539e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Modern Teras Tasarımı">
+      <div class="project-content">
+        <h3>Modern Teras Tasarımı</h3>
+        <p>Ankara’da bir daire terası, şehir yaşamına uygun, düşük bakım gerektiren bitkiler ve LED aydınlatma ile yeniden yaratıldı.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Yorumlar -->
+  <section id="testimonials">
+    <h2 class="section-title" data-aos="fade-up">Müşteri Yorumları</h2>
+    <div class="testimonials-grid">
+      <div class="testimonial" data-aos="fade-up">
+        <p>"Bahçemiz tam bir cennete döndü. Her detay düşünülmüş, ekibin titizliği takdire şayan."</p>
+        <div class="client">— Ayşe K., İstanbul</div>
+      </div>
+      <div class="testimonial" data-aos="fade-up" data-aos-delay="100">
+        <p>"Teras projemiz çok hızlı ve sorunsuz tamamlandı. Artık her sabah kahvemi bahçemde içiyorum!"</p>
+        <div class="client">— Mehmet T., Ankara</div>
+      </div>
+      <div class="testimonial" data-aos="fade-up" data-aos-delay="200">
+        <p>"Sürdürülebilir bahçe fikri harikaydı. Yağmur suyu sistemi ve kuraklık dirençli bitkiler sayesinde su faturası düştü."</p>
+        <div class="client">— Zeynep S., İzmir</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- İletişim -->
+  <section id="contact">
+    <h2 class="section-title" data-aos="fade-up">İletişim</h2>
+    <div class="contact-container">
+      <div class="contact-info">
+        <h3>Bize Ulaşın</h3>
+        <p><i class="fas fa-phone"></i> 0555 42 42 4242</p>
+        <p><i class="fas fa-envelope"></i> info@peyzaj42.com</p>
+        <p><i class="fas fa-map-marker-alt"></i> Beşiktaş, İstanbul</p>
+        <p><i class="fas fa-clock"></i> 08:00 - 19:00 (Pzt - Cuma)</p>
+        <div class="map-responsive">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3010.154245285924!2d29.058509615419207!3d41.05669507929684!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cac7e9f0b5a9c3%3A0x5d5a1e7a9a8b9a9a!2sBe%C5%9Fikta%C5%9F%2C%20%C4%B0stanbul!5e0!3m2!1str!2str!4v1620000000000!5m2!1str!2str" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+      </div>
+      <form id="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <input type="text" name="name" placeholder="Ad Soyad" required>
+        <input type="email" name="email" placeholder="E-posta" required>
+        <input type="tel" name="phone" placeholder="Telefon">
+        <textarea name="message" placeholder="Proje hakkında bilgi verin..." required></textarea>
+        <button type="submit" class="btn">Gönder</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-column">
+        <h4>Peyzaj 42</h4>
+        <p>Doğayla uyumlu, estetik ve sürdürülebilir dış mekân tasarımları.</p>
+      </div>
+      <div class="footer-column">
+        <h4>Hızlı Erişim</h4>
+        <a href="#home">Anasayfa</a>
+        <a href="#services">Hizmetler</a>
+        <a href="#gallery">Galeri</a>
+        <a href="#about">Hakkımızda</a>
+        <a href="#contact">İletişim</a>
+      </div>
+      <div class="footer-column">
+        <h4>Bizi Takip Edin</h4>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-pinterest"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+          <a href="#"><i class="fab fa-linkedin"></i></a>
+        </div>
+        <p style="margin-top: 15px;">Çalışma Saatleri: 08:00 - 19:00</p>
+      </div>
+    </div>
+    <p>&copy; 2025 Peyzaj 42. Tüm Hakları Saklıdır.</p>
+  </footer>
+
+  <!-- WhatsApp Butonu -->
+  <a href="https://wa.me/9055542424242" target="_blank" class="whatsapp-float">
+    <i class="fab fa-whatsapp"></i> <span>Whatsapp</span>
+  </a>
+
+  <!-- Yukarı Çık Butonu -->
+  <div id="topBtn" onclick="topFunction()"><i class="fas fa-arrow-up"></i></div>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
+  <script>
+    AOS.init({ duration: 800, once: true });
+
+    function toggleMenu() {
+      document.getElementById("nav").classList.toggle("active");
+    }
+
+    window.onscroll = function() {
+      const header = document.getElementById("header");
+      if (window.scrollY > 50) {
+        header.style.background = "rgba(255, 255, 255, 0.98)";
+        header.style.boxShadow = "0 5px 20px rgba(0,0,0,0.1)";
+      } else {
+        header.style.background = "rgba(255, 255, 255, 0.9)";
+        header.style.boxShadow = "0 2px 20px rgba(0,0,0,0.1)";
+      }
+      document.getElementById("topBtn").classList.toggle("show", window.scrollY > 300);
+    };
+
+    function topFunction() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        target.scrollIntoView({ behavior: 'smooth' });
+        if (document.getElementById("nav").classList.contains("active")) {
+          document.getElementById("nav").classList.remove("active");
+        }
+      });
+    });
+
+    // Galeri Filtreleme Fonksiyonu
+    function filterGallery(category) {
+      const items = document.querySelectorAll('.gallery-item');
+      const buttons = document.querySelectorAll('.category-btn');
+      
+      // Aktif buton stilini güncelle
+      buttons.forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+      
+      // Galeri öğelerini filtrele
+      items.forEach(item => {
+        if (category === 'all' || item.getAttribute('data-category') === category) {
+          item.classList.remove('hidden');
+        } else {
+          item.classList.add('hidden');
+        }
+      });
+    }
+  </script>
+
+  <!-- Google Analytics (Opsiyonel) -->
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXX');
+  </script> -->
+
+</body>
+</html>
