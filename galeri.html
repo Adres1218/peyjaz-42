@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeri | Profesyonel Fotoğraf Hizmetleri</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2196F3;
+            --primary-dark: #1976D2;
+            --primary-darker: #0D47A1;
+            --accent-color: #FFC107;
+            --white: #ffffff;
+            --light-bg: #f8faff;
+            --text-color: #333;
+            --border-radius: 8px;
+            --box-shadow: 0 4px 12px rgba(33, 150, 243, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background: var(--light-bg);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            text-decoration: none;
+        }
+
+        .back-to-home {
+            color: var(--primary-dark);
+            text-decoration: none;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: var(--transition);
+        }
+
+        .back-to-home:hover {
+            color: var(--primary-darker);
+            transform: translateX(-5px);
+        }
+
+        /* Gallery Section */
+        .gallery-section {
+            padding: 120px 0 60px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            color: var(--primary-darker);
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: var(--accent-color);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 20px 0;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+            aspect-ratio: 1/1;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(33, 150, 243, 0.2);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(13, 71, 161, 0.9), transparent);
+            color: white;
+            padding: 20px 15px 10px;
+            opacity: 0;
+            transition: var(--transition);
+            transform: translateY(10px);
+            text-align: center;
+        }
+
+        .gallery-item:hover .gallery-caption {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary-darker);
+            color: var(--white);
+            padding: 30px 0;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .social-links a {
+            color: var(--white);
+            background: rgba(255,255,255,0.1);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background: var(--accent-color);
+            color: var(--primary-darker);
+            transform: translateY(-3px);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 10px;
+            }
+
+            .gallery-section {
+                padding: 100px 0 40px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="index.html" class="logo">Fotoğrafçılık</a>
+            <a href="index.html" class="back-to-home">
+                <i class="fas fa-arrow-left"></i> Ana Sayfa
+            </a>
+        </div>
+    </header>
+
+    <!-- Gallery Section -->
+    <section class="gallery-section">
+        <div class="container">
+            <h2 class="section-title">Galeri</h2>
+            <div class="gallery-grid">
+                <!-- Gallery items will be dynamically added here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <p>© 2025 Profesyonel Fotoğraf Hizmetleri. Tüm hakları saklıdır.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Lightbox -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
+    
+    <script>
+        // Gallery images
+        const galleryImages = [
+            '0011bbe9-9576-48ec-b595-6d765ff3ab99.JPG',
+            '006c36f3-ea6d-4bc1-8a92-e95b92004873.JPG',
+            '01bf89fa-3ecc-44e9-8336-6a138153e005.JPG',
+            '19f7f7df-b4e5-461c-a862-f18a10200a32.JPG',
+            '1bcbb1e0-b6ef-44d9-98e9-ebbe3578c696.JPG',
+            '1df3e95f-30e0-4382-9f7e-24fb920f2bc2.JPG',
+            '1fd2eec4-4b2f-46f5-824a-d2c78dcfd737.JPG',
+            '261bf905-396d-4cc3-9a52-92f49736e1e8.JPG',
+            '2777df2c-4116-4229-bee2-26d41bac9365.JPG',
+            '302f933a-ff90-45ff-915e-13b8a136ce19.JPG',
+            '39a0d924-d5f9-46ef-b534-ac4af4076cc9.JPG',
+            '4447690e-f344-4bcd-8dfe-0dc5d2cbe4f7.JPG',
+            '4f421386-1805-4f8f-8b08-4e493c0e4666.JPG',
+            '6bbb5b59-24a5-4a63-9e5a-9223d6375e23.JPG',
+            '6cfee54d-e864-43bc-a531-d7d859e5d65c.JPG',
+            '75380728-beac-4878-9c84-04f03252c11c.JPG',
+            '79fc1980-dcf7-4bc5-b581-d684d7b5e541.JPG',
+            '809c151f-bea8-493d-9394-df6c152210ca.JPG',
+            '823965fa-dd64-4075-a0a4-5728c56f8f80.JPG',
+            '83328a44-3807-4767-8c1c-0dd71358ade8.JPG',
+            '86ffc81f-636f-4d77-a3ee-be9bdecd8ce9.JPG',
+            '89421e8b-735b-44e2-8601-43a77d9e8f60.JPG',
+            '9284fac1-84f1-4896-a4d5-38aa16d08175.JPG',
+            '9b00b3ff-1218-4012-8ab7-8411c058a5d1.JPG',
+            '9d04504c-ee0c-485f-bcfa-24edf5304bc5.JPG',
+            'bea4fbb1-a474-402d-a42e-7d7220603e43.JPG',
+            'c0fe2208-8b00-4700-adf1-89023858ef93.JPG',
+            'ca9a2e41-1de4-4a16-bbe2-518c947232df.JPG',
+            'd0816827-cc39-4c86-a310-848b11940b46.JPG',
+            'd26488c2-2a77-40b3-9655-8819053d1290.JPG',
+            'dda31f67-8b8f-495a-b989-747d7ccd6c48.JPG',
+            'f0f4dde3-dc5f-4d77-8981-a9ce6653b107.JPG',
+            'f240635c-fcad-486e-bd85-383cbda3e102.JPG'
+        ];
+
+        // Generate gallery items
+        const galleryGrid = document.querySelector('.gallery-grid');
+        galleryImages.forEach((image, index) => {
+            const galleryItem = document.createElement('div');
+            galleryItem.className = 'gallery-item';
+            galleryItem.innerHTML = `
+                <a href="${image}" data-lightbox="gallery" data-title="Fotoğraf ${index + 1}">
+                    <img src="${image}" alt="Fotoğraf ${index + 1}">
+                    <div class="gallery-caption">Fotoğraf ${index + 1}</div>
+                </a>
+            `;
+            galleryGrid.appendChild(galleryItem);
+        });
+
+        // Initialize lightbox
+        lightbox.option({
+            'resizeDuration': 200,
+            'wrapAround': true,
+            'showImageNumberLabel': false,
+            'alwaysShowNavOnTouchDevices': true
+        });
+    </script>
+</body>
+</html>
